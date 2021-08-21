@@ -1,0 +1,182 @@
+/* Remove the updown arrows in the input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main-body {
+  width: 1080px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Main Body Content */
+.detail-container {
+  width: 100%;
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.detail-text {
+  line-height: 2;
+  font-size: 19px;
+  font-weight: 600;
+  color: #f2f3f7;
+}
+
+.detail-text::first-line {
+  font-size: 21px;
+}
+
+/* Button to open .history-container */
+.detail-text #open {
+  display: inline-block;
+  border: none;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #f2ba87;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+#open ion-icon {
+  color: #0a3c7d;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#open ion-icon.open,
+#open.active ion-icon.close {
+  display: block;
+}
+#open ion-icon.close,
+#open.active ion-icon.open {
+  display: none;
+}
+
+/* Transaction History */
+.history-container {
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 0px;
+  border-radius: 5px;
+  overflow-y: auto;
+  transition: height 200ms linear;
+  scroll-behavior: smooth;
+}
+.history-container.active {
+  height: 200px;
+}
+
+.past-transaction {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 3px 5px;
+  margin-top: 2px;
+  line-height: 1.6;
+  overflow: hidden;
+  transition: background 125ms linear;
+}
+.past-transaction::first-line {
+  font-weight: 500;
+}
+
+.past-transaction:hover {
+  background-color: #ddd;
+}
+
+.past-transaction span.tmsp {
+  color: #444;
+  font-style: italic;
+}
+
+.amount-container {
+  float: right;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+/* Transaction form */
+.transaction {
+  width: 100%;
+  color: #f2f3f7;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.form-group {
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+.form-group.disp-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 130px;
+}
+
+.form-style {
+  width: calc(100% - 150px);
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 2px solid #f2f3f7;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  background: #f2f3f7;
+  padding: 5px 10px;
+  transition: all 150ms linear;
+  line-height: 1.5;
+}
+
+.form-style:focus {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: #000;
+}
+
+.warning {
+  padding-top: 3px;
+  padding-left: 25px;
+  font-style: italic;
+  font-weight: 500;
+  display: none;
+}
+.form-group:last-child {
+  padding-bottom: 0;
+}
+.form-group button {
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 7px 15px;
+  background: #f2ba87;
+  color: #0a3c7d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms linear;
+}
+
+.form-group button:hover {
+  transform: scale(1.1);
+}

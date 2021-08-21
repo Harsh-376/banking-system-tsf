@@ -1,0 +1,55 @@
+/* Navigation Bar */
+.navigation {
+  width: 100%;
+  overflow: hidden;
+  /* background: black; */
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+.navigation ul {
+  display: flex;
+  align-items: center;
+}
+.navigation li {
+  float: left;
+  list-style-type: none;
+  padding: 5px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: all 150ms linear;
+  cursor: pointer;
+}
+
+.navigation li a {
+  width: fit-content;
+  text-decoration: none;
+  color: #0a3c7d;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.navigation li a ion-icon {
+  font-size: 25px;
+  padding: 0px 5px;
+}
+
+.navigation li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+li.site-name {
+  color: #0a3c7d;
+  display: inline-block;
+  margin: 0px 30px 0px 10px;
+}
+li.site-name a {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
+  font-weight: 600;
+}
+li.site-name:hover {
+  background: transparent;
+}
